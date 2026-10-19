@@ -1,0 +1,54 @@
+
+name: Synchronisation GitHub vers Codeberg
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-codeberg
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Publier sur Codeberg
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer les fichiers GitHub
+        uses: actions/checkout@v4
+
+      - name: Configurer la cle SSH
+        env:
+          SSH_KEY: ${{ secrets.CODEBERG_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H codeberg.org >> ~/.ssh/known_hosts
+
+      - name: Preparer les fichiers du site
+        run: |
+          mkdir -p public
+          cp index.html style.css script.js public/
+          cp favicon.svg CV_TheoBeranger.pdf public/
+          touch public/.nojekyll
+
+      - name: Envoyer sur Codeberg Pages
+        run: |
+          cd public
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy portfolio from GitHub"
+          git branch -M pages
+          git remote add codeberg \
+            git@codeberg.org:ThEo_BrNg/portfolio.git
+          git push --force codeberg pages
