@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.resume | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <!-- Icônes FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Police Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <p class="site"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="{{ '/' | relative_url }}#projets">Projets</a></li>
-        <li><a href="{{ '/' | relative_url }}#competences">Compétences</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-{{ content }}
-  </main>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="{{ '/' | relative_url }}" class="logo"><i class="fa-solid fa-terminal"></i> {{ site.title }}</a>
+            <nav class="nav-links">
+                <a href="{{ '/' | relative_url }}#projets">Projets</a>
+                <a href="{{ '/' | relative_url }}#competences">Compétences</a>
+                <a href="mailto:theo.beranger78@gmail.com"><i class="fa-solid fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <footer>
-    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}{% if site.linkedin != "" %}<a href="{{ site.linkedin }}">LinkedIn</a> · {% endif %}contenu sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a></p>
-  </footer>
+    <main class="site-main">
+        {{ content }}
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; {{ 'now' | date: "%Y" }} - Théo Beranger | Portfolio BTS SIO SISR</p>
+    </footer>
+
 </body>
 </html>
