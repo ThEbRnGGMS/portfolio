@@ -1,18 +1,14 @@
-# Modèle de portfolio BTS SIO
+# Portfolio Théo Béranger
 
-Site statique gratuit, construit avec Jekyll (logiciel libre) et publié par GitHub Pages. Aucune installation n'est nécessaire : tout se fait depuis le navigateur.
+Portfolio statique compatible avec GitHub Pages.
 
-## Démarrer
+## Installation
+1. Copier `index.html`, `style.css`, `script.js` et `CV_TheoBeranger.pdf` à la racine du dépôt GitHub `portfolio`.
+2. Dans GitHub > Settings > Pages, choisir **Deploy from a branch**, branche `main`, dossier `/(root)`.
+3. Attendre la publication à l'adresse `https://thebrnggms.github.io/portfolio/`.
 
-1. Bouton vert « Use this template », puis « Create a new repository ».
-2. Dans `_config.yml`, remplacez le nom, la phrase de présentation et l'adresse e-mail.
-3. Settings, Pages, Source « Deploy from a branch », branche `main`, dossier `/ (root)`, Save.
-
-## Ajouter un projet
-
-1. Ouvrez le dossier `_projets`, puis le fichier `_A-COPIER.md`, et copiez tout son contenu.
-2. Revenez dans `_projets`, « Add file », « Create new file », nommez le fichier par exemple `wireshark.md`, collez, remplissez.
-3. Les captures se déposent dans `images` (« Add file », « Upload files »).
-4. « Commit changes ». La page d'accueil et le tableau des compétences se mettent à jour seuls.
-
-Code sous licence MIT, contenu sous licence CC BY 4.0.
+## Personnalisation
+- Modifier les textes et projets dans `index.html`.
+- Modifier couleurs et mise en page dans `style.css`.
+- Remplacer l'emoji de l'avatar par une illustration personnelle si souhaité.
+- Les projets présentés sont issus des expériences du CV ; aucun dépôt spécifique n'est inventé.
