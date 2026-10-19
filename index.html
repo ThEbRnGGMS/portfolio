@@ -1,37 +1,75 @@
 ---
 layout: default
+title: "Accueil"
 ---
-<h1>{{ site.title }}</h1>
-<p class="sous-titre">{{ site.description }}</p>
 
-<h2>Profil</h2>
-<p>Je suis en 1ère année de BTS SIO option SISR</p>
-<p>J'ai des compétences en codage, système et réseau</p>
-<p>Codage : PYTHON ; JS ; CSS ; HTML</p>
-<p>Je vise un Master ou un école d'ingénieur dans le domaine de la cybersécurité</p>
- 
+<div class="hero-section">
+    <h1>{{ site.title }}</h1>
+    <p class="sous-titre">{{ site.description }}</p>
+</div>
+
+<!-- Section Profil & Objectifs -->
+<section class="profil-section">
+    <h2><i class="fa-solid fa-user"></i> Profil & Objectifs</h2>
+    <div class="profil-content">
+        <p>Actuellement en <strong>1ère année de BTS SIO option SISR</strong> en alternance (3 jours en entreprise / 2 jours à l'école), je m'oriente vers l'administration système et les environnements Linux.</p>
+        <p>Passionné par l'infrastructure IT et la cybersécurité, je vise par la suite une école d'ingénieur ou un Master dans ce domaine.</p>
+        
+        <div class="skills-summary">
+            <p><strong>Compétences clés :</strong></p>
+            <ul>
+                <li><strong>Système & Réseau :</strong> Linux (Ubuntu), Réseaux LAN, Switch Cisco, DHCP/DNS, Ansible[cite: 2].</li>
+                <li><strong>Développement / Scripting :</strong> Python, Bash, JavaScript, HTML, CSS.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 {% assign projets = site.projets | sort: "date" | reverse %}
 
-<h2 id="projets">Projets ({{ projets.size }})</h2>
-{% for p in projets %}
-<article class="carte">
-  <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
-  <p>{{ p.resume }}</p>
-  <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-</article>
-{% endfor %}
+<!-- Section Projets -->
+<section class="projets-section">
+    <h2 id="projets"><i class="fa-solid fa-folder-open"></i> Projets Réalisés ({{ projets.size }})</h2>
+    <div class="projets-grid">
+    {% for p in projets %}
+    <article class="carte">
+        <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+        <p>{{ p.resume }}</p>
+        <p class="meta"><i class="fa-regular fa-calendar"></i> {{ p.date | date: "%m/%Y" }} &nbsp;·&nbsp; <span class="cadre-badge">{{ p.cadre }}</span></p>
+    </article>
+    {% endfor %}
+    </div>
+</section>
 
-<h2 id="competences">Compétences du bloc 1</h2>
-<p>Chaque croix renvoie au projet qui la prouve. Le tableau se remplit tout seul à chaque projet ajouté.</p>
-<div class="defile">
-<table>
-  <thead>
-    <tr><th scope="col">Compétence</th>{% for p in projets %}<th scope="col"><a href="{{ p.url | relative_url }}">P{{ forloop.rindex }}</a></th>{% endfor %}</tr>
-  </thead>
-  <tbody>
-  {% for c in site.data.competences %}
-    <tr><th scope="row">{{ c.libelle }}</th>{% for p in projets %}<td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">X</a>{% endif %}</td>{% endfor %}</tr>
-  {% endfor %}
-  </tbody>
-</table>
-</div>
+<!-- Section Tableau de Compétences (Bloc 1) -->
+<section class="competences-section">
+    <h2 id="competences"><i class="fa-solid fa-table-cells"></i> Compétences du Bloc 1 (SISR)</h2>
+    <p class="section-desc">Chaque croix renvoie au projet qui la prouve. Le tableau se remplit automatiquement à chaque ajout de projet.</p>
+    
+    <div class="defile">
+    <table class="competences-table">
+        <thead>
+            <tr>
+                <th scope="col">Compétence</th>
+                {% for p in projets %}
+                <th scope="col"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">P{{ forloop.rindex }}</a></th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for c in site.data.competences %}
+            <tr>
+                <th scope="row">{{ c.libelle }}</th>
+                {% for p in projets %}
+                <td class="case">
+                    {% if p.competences contains c.code %}
+                    <a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}" class="check-link">X</a>
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</section>
