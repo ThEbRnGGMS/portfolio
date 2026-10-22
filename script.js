@@ -11,10 +11,10 @@ const i18n = {
     navProjects: 'Projets',
     navExperience: 'Parcours',
     navContact: 'Contact',
-    available: 'Ouvert aux opportunités en alternance',
+    available: 'En alternance chez Evariste · 2026–2028',
     hello: "Salut, moi c'est",
     iAm: 'Je suis passionné par',
-    heroText: "Étudiant en BTS SIO option SISR, je construis, configure et automatise des infrastructures informatiques. Linux, réseaux et curiosité technique au quotidien.",
+    heroText: "Technicien assistance informatique en alternance chez Evariste et étudiant en BTS SIO SISR à Ensitech. J’interviens sur le support utilisateurs, la préparation des postes, la gestion du parc et les environnements Windows, Linux et Microsoft 365.",
     seeProjects: 'Explorer mes projets',
     downloadCV: 'Télécharger mon CV',
     contactMe: 'Me contacter ↗',
@@ -22,11 +22,11 @@ const i18n = {
     aboutTitle: "L'infrastructure, ma passion.",
     aboutIntro: "Une approche pratique, une envie constante d'apprendre.",
     aboutCardTitle: 'Un profil orienté terrain',
-    aboutBody: "En BTS SIO option SISR à Ensitech, je m'intéresse particulièrement à l'administration de systèmes Linux, aux services réseau et à l'automatisation. Mes stages m'ont permis de découvrir des environnements concrets, de la configuration de serveurs aux plateformes IoT.",
+    aboutBody: "En BTS SIO option SISR à Ensitech, je développe mes compétences en alternance chez Evariste : diagnostic des incidents via Jira Service Desk, assistance aux utilisateurs, gestion des comptes Active Directory et Microsoft 365, préparation du matériel et suivi du parc informatique. Mes stages chez Orness et Carrier Transicold m’ont également permis de pratiquer Linux, les réseaux, Python et l’IoT.",
     recruiterTitle: 'Vous recrutez ?',
     recruiterBody: 'Découvrez mon parcours en 60 secondes avec une visite guidée des sections clés du portfolio.',
     startTour: 'Lancer la visite guidée →',
-    rhythm: 'jours entreprise / école',
+    rhythm: 'alternance chez Evariste',
     skillsTitle: 'Ma boîte à outils.',
     skillsIntro: "Des technologies que j'utilise ou que j'ai pratiquées en formation et en stage.",
     projectsTitle: 'Du concret, pas du blabla.',
@@ -37,9 +37,9 @@ const i18n = {
     experienceTitle: 'Mon parcours en action.',
     experienceIntro: 'Stages, apprentissages et formation.',
     labTitle: 'Un petit Linux dans ton navigateur.',
-    labIntro: "Un bureau simulé, sans accès à ton ordinateur. Ouvre le terminal, teste les commandes et découvre l'easter egg !",
+    labIntro: "Explore mon espace de travail interactif : terminal avec historique, explorateur de projets et raccourcis. Tout fonctionne en simulation dans ton navigateur.",
     contactTitle: 'On construit quelque chose ?',
-    contactIntro: 'Une alternance, une question, une opportunité : parlons-en.',
+    contactIntro: 'Une question, un projet ou une opportunité professionnelle : échangeons.',
     contactDirect: 'Me contacter directement',
     phone: 'Téléphone',
     sendMessage: 'Envoyer un message',
@@ -57,10 +57,10 @@ const i18n = {
     navProjects: 'Projects',
     navExperience: 'Journey',
     navContact: 'Contact',
-    available: 'Open to work-study opportunities',
+    available: 'IT support apprentice at Evariste · 2026–2028',
     hello: "Hi there, I'm",
     iAm: "I'm passionate about",
-    heroText: 'BTS SIO SISR student focused on building, configuring and automating IT infrastructure. Linux, networks and a constant drive to learn.',
+    heroText: 'IT support apprentice at Evariste and BTS SIO SISR student at Ensitech. I work on user support, workstation deployment, IT asset management and Windows, Linux and Microsoft 365 environments.',
     seeProjects: 'Explore my projects',
     downloadCV: 'Download my CV',
     contactMe: 'Get in touch ↗',
@@ -68,11 +68,11 @@ const i18n = {
     aboutTitle: 'Infrastructure is my passion.',
     aboutIntro: 'Hands-on learning and endless curiosity.',
     aboutCardTitle: 'A hands-on mindset',
-    aboutBody: 'As a BTS SIO SISR student at Ensitech, I focus on Linux administration, networking services and automation. My internships have exposed me to real environments, from server configuration to IoT platforms.',
+    aboutBody: 'As a BTS SIO SISR student at Ensitech, I am gaining hands-on experience at Evariste: incident handling through Jira Service Desk, user support, Active Directory and Microsoft 365 accounts, device setup and IT asset tracking. Previous internships at Orness and Carrier Transicold also gave me experience with Linux, networking, Python and IoT.',
     recruiterTitle: 'Hiring?',
     recruiterBody: 'Discover my background in a short guided tour of this portfolio.',
     startTour: 'Start guided tour →',
-    rhythm: 'days at company / school',
+    rhythm: 'apprenticeship at Evariste',
     skillsTitle: 'My toolkit.',
     skillsIntro: 'Technologies I have used in training or internships.',
     projectsTitle: 'Real work, real learning.',
@@ -85,7 +85,7 @@ const i18n = {
     labTitle: 'A little Linux in your browser.',
     labIntro: 'A simulated desktop with no access to your computer. Open the terminal and try the secret game!',
     contactTitle: "Let's build something.",
-    contactIntro: 'Work-study, questions or opportunities: get in touch.',
+    contactIntro: 'Questions, projects or professional opportunities: get in touch.',
     contactDirect: 'Direct contact',
     phone: 'Phone',
     sendMessage: 'Send a message',
@@ -99,6 +99,10 @@ const i18n = {
 };
 
 const skills = [
+  ['🛠️', 'Support IT / Jira', 'Incidents · Help desk'],
+  ['🔐', 'Active Directory', 'Comptes · Accès · Identity'],
+  ['☁️', 'Microsoft 365', 'Comptes · Bureautique'],
+  ['💻', 'Parc informatique', 'Windows · macOS · Matériel'],
   ['🐧', 'Linux / Ubuntu', 'Systèmes · Systems'],
   ['🌐', 'DHCP / DNS', 'Services réseau · Networking'],
   ['⌨️', 'Bash', 'Scripts shell'],
@@ -110,6 +114,33 @@ const skills = [
 ];
 
 const projects = [
+  {
+    id: 'support', category: ['security', 'network'], icon: '🛠️', art: '#315de9',
+    title: { fr: 'Support utilisateurs & gestion des incidents', en: 'User support & incident management' },
+    desc: { fr: 'Diagnostic et résolution des incidents via Jira Service Desk, support matériel, logiciel et bureautique chez Evariste.', en: 'Incident diagnosis and resolution through Jira Service Desk, hardware, software and office support at Evariste.' },
+    goal: { fr: 'Accompagner les utilisateurs et assurer le suivi des demandes informatiques.', en: 'Help users and track IT service requests.' },
+    steps: { fr: 'Prise en charge des tickets, diagnostic, dépannage de proximité, suivi des SAV constructeurs et escalade vers la DSI si nécessaire.', en: 'Handle tickets, troubleshoot on site, coordinate manufacturer support and escalate to IT teams when needed.' },
+    result: { fr: 'Missions décrites dans le cadre de l’alternance Evariste (septembre 2026 – juillet 2028) ; aucun indicateur chiffré communiqué.', en: 'Responsibilities listed for the Evariste apprenticeship (September 2026 – July 2028); no quantified results provided.' },
+    tags: ['Jira Service Desk', 'Support IT', 'Windows', 'Hardware']
+  },
+  {
+    id: 'identity', category: ['security', 'network'], icon: '🔐', art: '#596bc1',
+    title: { fr: 'Comptes, habilitations & postes de travail', en: 'Accounts, access rights & workstations' },
+    desc: { fr: 'Gestion des arrivées et départs, comptes Active Directory et Office 365, droits d’accès et préparation des postes.', en: 'Onboarding and offboarding, Active Directory and Office 365 accounts, access rights and workstation setup.' },
+    goal: { fr: 'Préparer les équipements et attribuer les accès adaptés aux utilisateurs.', en: 'Prepare devices and assign appropriate user access.' },
+    steps: { fr: 'Gestion des groupes de sécurité, listes de distribution et accès métiers ; configuration de postes Windows, Ubuntu, Mac et tablettes.', en: 'Manage security groups, distribution lists and business application access; configure Windows, Ubuntu, Mac and tablet devices.' },
+    result: { fr: 'Activités de l’alternance chez Evariste ; données sensibles et détails internes non publiés.', en: 'Evariste apprenticeship responsibilities; internal and sensitive details are not published.' },
+    tags: ['Active Directory', 'Office 365', 'Windows', 'Ubuntu']
+  },
+  {
+    id: 'assets', category: ['network'], icon: '📦', art: '#438bba',
+    title: { fr: 'Gestion et renouvellement du parc IT', en: 'IT asset management & refresh' },
+    desc: { fr: 'Inventaire, réception, configuration et expédition des équipements ; participation au renouvellement des postes.', en: 'Inventory, receipt, configuration and shipment of equipment; participation in workstation refreshes.' },
+    goal: { fr: 'Assurer le suivi des équipements et préparer leur mise à disposition.', en: 'Track equipment and prepare devices for deployment.' },
+    steps: { fr: 'Suivi des PC, téléphones, tablettes et terminaux RFID ; planification, transfert de données et réinstallation lors des renouvellements.', en: 'Track PCs, phones, tablets and RFID devices; plan migrations, transfer data and reinstall systems during refreshes.' },
+    result: { fr: 'Missions prévues et décrites dans le CV pour l’alternance Evariste.', en: 'Responsibilities documented in the CV for the Evariste apprenticeship.' },
+    tags: ['Inventaire', 'Déploiement', 'Matériel', 'RFID']
+  },
   {
     id: 'linux',
     category: ['linux', 'network'],
@@ -161,6 +192,7 @@ const projects = [
 ];
 
 const journey = [
+  { date: 'SEPT 2026 — JUIL 2028', title: 'Technicien assistance informatique · Alternance', org: 'Evariste · Maurepas', desc: { fr: 'Jira Service Desk, support utilisateurs, gestion du parc, Active Directory, Office 365, préparation et renouvellement des postes.', en: 'Jira Service Desk, user support, IT asset management, Active Directory, Office 365, workstation setup and refresh.' } },
   { date: '2026 — 2028', title: 'BTS SIO · option SISR', org: 'Ensitech · Montigny-le-Bretonneux', desc: { fr: 'Formation en alternance orientée systèmes, infrastructures et réseaux.', en: 'Work-study program focused on systems, infrastructure and networks.' } },
   { date: 'NOV — DÉC 2025', title: 'Assistant technicien télématique', org: 'Carrier Transicold · Rueil-Malmaison', desc: { fr: 'IoT, plateformes Lynx/Flespi, Salesforce et rapport Excel automatisé en Python.', en: 'IoT, Lynx/Flespi, Salesforce and Python-based Excel reporting.' } },
   { date: 'MAI — JUIN 2025', title: 'Assistant technicien Linux', org: 'Orness · Paris', desc: { fr: 'Ubuntu, DHCP/DNS, scripts shell, Ansible et switch Cisco.', en: 'Ubuntu, DHCP/DNS, shell scripting, Ansible and Cisco switching.' } },
@@ -291,15 +323,15 @@ function selectNode(id) {
 $$('.network-node').forEach(b => b.onclick = () => selectNode(b.dataset.node));
 
 const tourFr = [
-  ['Bienvenue chez Théo', 'BTS SIO SISR en alternance, orienté administration Linux et réseaux.'],
-  ['Compétences techniques', 'Ubuntu, DHCP, DNS, Python, Bash, Ansible et Cisco : des technologies pratiquées en stage.'],
-  ['Expériences concrètes', 'Stages chez Orness, Carrier Transicold et Holberton, avec des missions techniques variées.'],
+  ['Bienvenue chez Théo', 'Technicien assistance informatique en alternance chez Evariste et étudiant en BTS SIO SISR à Ensitech.'],
+  ['Compétences techniques', 'Support IT, Jira Service Desk, Active Directory, Microsoft 365, Linux, réseaux et Python.'],
+  ['Expériences concrètes', 'Alternance chez Evariste et stages chez Orness, Carrier Transicold et Holberton.'],
   ['Échangeons !', 'Vous souhaitez discuter d’une opportunité ? Mon CV et mes coordonnées sont disponibles sur ce site.']
 ];
 const tourEn = [
-  ['Meet Théo', 'BTS SIO SISR work-study student focused on Linux and networks.'],
-  ['Technical skills', 'Ubuntu, DHCP, DNS, Python, Bash, Ansible and Cisco: hands-on internship experience.'],
-  ['Real experience', 'Internships at Orness, Carrier Transicold and Holberton.'],
+  ['Meet Théo', 'IT support apprentice at Evariste and BTS SIO SISR student at Ensitech.'],
+  ['Technical skills', 'IT support, Jira Service Desk, Active Directory, Microsoft 365, Linux, networking and Python.'],
+  ['Real experience', 'Apprenticeship at Evariste and internships at Orness, Carrier Transicold and Holberton.'],
   ["Let's connect", 'My CV and contact details are available on this website.']
 ];
 let tourStep = 0;
@@ -357,10 +389,10 @@ function response(cmd) {
   }
   switch (c) {
     case 'help': return 'Commands: ' + commands.join(', ');
-    case 'whoami': return 'Théo Béranger — BTS SIO SISR · Linux / Network enthusiast';
+    case 'whoami': return 'Théo Béranger — Technicien support IT en alternance · BTS SIO SISR';
     case 'skills': return skills.map(s => s[1]).join(' · ');
     case 'projects': return projects.map((p, i) => `${i + 1}. ${p.title[lang]}`).join('\n');
-    case 'experience': return 'Orness · Carrier Transicold · Holberton';
+    case 'experience': return 'Evariste · Orness · Carrier Transicold · Holberton';
     case 'contact': return 'theo.beranger78@gmail.com';
     case 'date': return new Date().toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-GB');
     case 'ls': return 'readme.txt  projects/  skills/  easter-egg.sh';
@@ -378,36 +410,48 @@ function response(cmd) {
 }
 
 function terminalHTML() {
-  return `<div class="terminal-output" id="termOut" role="log" aria-live="polite">Théo OS v3.0 — simulated terminal\nType help to see commands.\n\n</div><form class="terminal-input-line" id="termForm" autocomplete="off"><label for="termInput">theo@portfolio:~$</label><input id="termInput" aria-label="Terminal command" spellcheck="false"></form>`;
+  return `<div class="os-terminal-intro"><span class="os-terminal-symbol">⌘</span><div><strong>THEO OS / TERMINAL</strong><small>Session locale · Bash simulé · v4.0</small></div></div><div class="os-quick-commands"><span>${lang === 'fr' ? 'Essayer :' : 'Try:'}</span>${['help','whoami','skills','projects','game','sudo hire-me'].map(x=>`<button type="button" data-command="${x}">${x}</button>`).join('')}</div><div class="terminal-output" id="termOut" role="log" aria-live="polite">TheoOS v4.0 — ${lang === 'fr' ? 'Bienvenue ! Lance help pour explorer.' : 'Welcome! Run help to explore.'}\n\n</div><form class="terminal-input-line" id="termForm" autocomplete="off"><label for="termInput">theo@portfolio:~$</label><input id="termInput" aria-label="Terminal command" spellcheck="false" placeholder="help"/><button type="submit" aria-label="Exécuter la commande">↵</button></form>`;
 }
-
+let terminalHistoryIndex = 0;
+function runTerminal(cmd) {
+  const out = $('#termOut'); if (!out) return;
+  const res = response(cmd);
+  if (cmd) { termState.history.push(cmd); terminalHistoryIndex = termState.history.length; }
+  if (res === '__CLEAR__') out.textContent = '';
+  else out.textContent += `theo@portfolio:~$ ${cmd}\n${res}\n\n`;
+  out.scrollTop = out.scrollHeight;
+  $('#termInput').value = ''; $('#termInput').focus();
+}
 function openWindow(type) {
-  const titles = { terminal: 'Terminal — bash', files: 'Projects — File manager', about: 'About — Théo OS' };
+  const titles = { terminal: 'terminal — bash', files: 'projects / explorer', about: 'system / about' };
+  if (!titles[type]) return;
   $('#windowTitle').textContent = titles[type];
   $('#desktopWindow').hidden = false;
+  $$('.os-app').forEach(b => b.classList.toggle('active', b.dataset.window === type));
   if (type === 'terminal') {
     $('#windowContent').innerHTML = terminalHTML();
-    $('#termForm').onsubmit = e => {
-      e.preventDefault();
-      const input = $('#termInput');
-      const cmd = input.value.trim();
-      const out = $('#termOut');
-      const res = response(cmd);
-      if (res === '__CLEAR__') out.textContent = '';
-      else out.textContent += `theo@portfolio:~$ ${cmd}\n${res}\n\n`;
-      input.value = '';
-      out.scrollTop = out.scrollHeight;
+    $('#termForm').onsubmit = e => { e.preventDefault(); runTerminal($('#termInput').value.trim()); };
+    $$('#windowContent [data-command]').forEach(b => b.onclick = () => runTerminal(b.dataset.command));
+    $('#termInput').onkeydown = e => {
+      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        e.preventDefault(); terminalHistoryIndex = Math.max(0, Math.min(termState.history.length, terminalHistoryIndex + (e.key === 'ArrowUp' ? -1 : 1)));
+        e.target.value = termState.history[terminalHistoryIndex] || '';
+      } else if (e.key === 'Tab') {
+        e.preventDefault(); const matches = commands.filter(x => x.startsWith(e.target.value.toLowerCase()));
+        if (matches.length === 1) e.target.value = matches[0];
+      }
     };
     $('#termInput').focus();
   } else if (type === 'files') {
-    $('#windowContent').innerHTML = `<div class="window-info"><h3>📁 projects/</h3>${projects.map(p => `<p>📄 ${p.title[lang]}</p>`).join('')}<p><small>${lang === 'fr' ? 'Ouvrez les fiches détaillées dans la section Projets.' : 'Open detailed case studies in the Projects section.'}</small></p></div>`;
+    $('#windowContent').innerHTML = `<div class="os-explorer"><div class="os-path">⌂ / home / theo / <strong>projects</strong></div><div class="os-file-head"><span>${lang === 'fr' ? 'Nom du projet' : 'Project name'}</span><span>TYPE</span></div>${projects.map(p=>`<button class="os-file" data-os-project="${p.id}"><span class="os-file-icon">${p.icon}</span><span>${p.title[lang]}<small>${p.tags.join(' · ')}</small></span><span class="os-file-arrow">↗</span></button>`).join('')}</div>`;
+    $$('[data-os-project]').forEach(b => b.onclick = () => openProject(b.dataset.osProject));
   } else {
-    $('#windowContent').innerHTML = '<div class="window-info"><h3>👤 Théo Béranger</h3><p>BTS SIO SISR · Linux · Networks · Python</p><p><a href="mailto:theo.beranger78@gmail.com">theo.beranger78@gmail.com ↗</a></p></div>';
+    $('#windowContent').innerHTML = `<div class="os-profile"><div class="os-profile-avatar">TB<span>.</span></div><div><span class="os-profile-label">SYSTEM PROFILE</span><h3>Théo Béranger</h3><p>${lang === 'fr' ? 'Technicien assistance informatique en alternance chez Evariste · BTS SIO SISR à Ensitech.' : 'IT support technician apprentice at Evariste · BTS SIO SISR at Ensitech.'}</p><div class="os-profile-tags"><span>Linux</span><span>Support IT</span><span>Réseaux</span><span>Python</span></div><a class="os-profile-link" href="mailto:theo.beranger78@gmail.com">theo.beranger78@gmail.com ↗</a></div></div>`;
   }
 }
-
 $$('[data-window]').forEach(b => b.onclick = () => openWindow(b.dataset.window));
-$('#windowClose').onclick = () => $('#desktopWindow').hidden = true;
+$('#windowClose').onclick = () => { $('#desktopWindow').hidden = true; $$('.os-app').forEach(b => b.classList.remove('active')); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#desktopWindow').hidden && !$('#projectDialog').open) $('#windowClose').click(); });
 
 $('#contactForm').onsubmit = e => {
   e.preventDefault();
@@ -507,8 +551,8 @@ function spotlights() {
 }
 
 const phrases = {
-  fr: ['Linux & Réseaux', 'l’administration système', 'Python & l’automatisation', 'les infrastructures IT'],
-  en: ['Linux & Networking', 'system administration', 'Python & automation', 'IT infrastructure']
+  fr: ['le support informatique', 'Linux & Réseaux', 'Active Directory & Microsoft 365', 'Python & l’automatisation'],
+  en: ['IT support', 'Linux & Networking', 'Active Directory & Microsoft 365', 'Python & automation']
 };
 let phraseIndex = 0, charIndex = 0, erasing = false;
 
