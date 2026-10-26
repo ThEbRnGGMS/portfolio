@@ -192,7 +192,7 @@ const projects = [
 ];
 
 const journey = [
-  { date: 'SEPT 2026 — JUIL 2028', title: 'Technicien assistance informatique · Alternance', org: 'Evariste · Maurepas', desc: { fr: 'Jira Service Desk, support utilisateurs, gestion du parc, Active Directory, Office 365, préparation et renouvellement des postes.', en: 'Jira Service Desk, user support, IT asset management, Active Directory, Office 365, workstation setup and refresh.' } },
+  { date: 'SEPT 2026 — AOUT 2028', title: 'Technicien assistance informatique · Alternance', org: 'Evariste · Maurepas', desc: { fr: 'Jira Service Desk, support utilisateurs, gestion du parc, Active Directory, Office 365, préparation et renouvellement des postes.', en: 'Jira Service Desk, user support, IT asset management, Active Directory, Office 365, workstation setup and refresh.' } },
   { date: '2026 — 2028', title: 'BTS SIO · option SISR', org: 'Ensitech · Montigny-le-Bretonneux', desc: { fr: 'Formation en alternance orientée systèmes, infrastructures et réseaux.', en: 'Work-study program focused on systems, infrastructure and networks.' } },
   { date: 'NOV — DÉC 2025', title: 'Assistant technicien télématique', org: 'Carrier Transicold · Rueil-Malmaison', desc: { fr: 'IoT, plateformes Lynx/Flespi, Salesforce et rapport Excel automatisé en Python.', en: 'IoT, Lynx/Flespi, Salesforce and Python-based Excel reporting.' } },
   { date: 'MAI — JUIN 2025', title: 'Assistant technicien Linux', org: 'Orness · Paris', desc: { fr: 'Ubuntu, DHCP/DNS, scripts shell, Ansible et switch Cisco.', en: 'Ubuntu, DHCP/DNS, shell scripting, Ansible and Cisco switching.' } },
