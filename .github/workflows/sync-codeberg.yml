@@ -1,3 +1,4 @@
+
 name: Synchronisation GitHub vers Codeberg
 
 on:
@@ -53,8 +54,13 @@ jobs:
         shell: bash
         run: |
           mkdir -p public
+
           cp index.html style.css script.js public/
           cp favicon.svg CV_TheoBeranger.pdf public/
+
+          # Ajouter le certificat Cisco
+          cp CertificatNetworkingDevicesAndBAsicConfigUpdate.pdf public/
+
           touch public/.nojekyll
 
       - name: Publier sur Codeberg Pages
