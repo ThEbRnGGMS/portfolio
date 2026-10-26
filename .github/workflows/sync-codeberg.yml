@@ -1,4 +1,3 @@
-
 name: Synchronisation GitHub vers Codeberg
 
 on:
@@ -73,6 +72,6 @@ jobs:
           git branch -M pages
 
           git remote add codeberg \
-            git@codeberg.org:ThEo_BrNg/portfolio.git
+            git@codeberg.org:ThEo_BrNg/lan-sio.git
 
           git push --force codeberg pages
