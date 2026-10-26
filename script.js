@@ -120,7 +120,7 @@ const projects = [
     desc: { fr: 'Diagnostic et résolution des incidents via Jira Service Desk, support matériel, logiciel et bureautique chez Evariste.', en: 'Incident diagnosis and resolution through Jira Service Desk, hardware, software and office support at Evariste.' },
     goal: { fr: 'Accompagner les utilisateurs et assurer le suivi des demandes informatiques.', en: 'Help users and track IT service requests.' },
     steps: { fr: 'Prise en charge des tickets, diagnostic, dépannage de proximité, suivi des SAV constructeurs et escalade vers la DSI si nécessaire.', en: 'Handle tickets, troubleshoot on site, coordinate manufacturer support and escalate to IT teams when needed.' },
-    result: { fr: 'Missions décrites dans le cadre de l’alternance Evariste (septembre 2026 – juillet 2028) ; aucun indicateur chiffré communiqué.', en: 'Responsibilities listed for the Evariste apprenticeship (September 2026 – July 2028); no quantified results provided.' },
+    result: { fr: 'Missions décrites dans le cadre de l’alternance Evariste (septembre 2026 – Août 2028) ; aucun indicateur chiffré communiqué.', en: 'Responsibilities listed for the Evariste apprenticeship (September 2026 – August 2028); no quantified results provided.' },
     tags: ['Jira Service Desk', 'Support IT', 'Windows', 'Hardware']
   },
   {
